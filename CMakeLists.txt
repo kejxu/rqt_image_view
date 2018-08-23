@@ -81,6 +81,10 @@ catkin_install_python(PROGRAMS scripts/rqt_image_view
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
+if (WIN32)
+  add_windows_python_exe_helper(rqt_image_view)
+endif()
+
 install(DIRECTORY include/${PROJECT_NAME}/
   DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
 )
